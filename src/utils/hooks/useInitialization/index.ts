@@ -1,15 +1,15 @@
 import { useEffect } from 'react'
-import configureTheme from 'utils/configureTheme'
+import store from 'services/redux'
+import { INITIALIZE_APP } from 'services/redux/universal'
 
-const useInitialization = ({ setInitialized, setDarkMode, setScreenSize }) => {
+const useInitialization = () => {
+  const runInitialization = () => {
+    store.dispatch({ type: INITIALIZE_APP })
+  }
+
   useEffect(() => {
     runInitialization()
   }, [])
-
-  const runInitialization = async () => {
-    await Promise.all(await configureTheme(setDarkMode, setScreenSize))
-    return setInitialized(true)
-  }
 }
 
 export default useInitialization

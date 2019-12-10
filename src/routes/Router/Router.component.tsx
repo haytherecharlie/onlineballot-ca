@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import types from 'prop-types'
 import { createStackNavigator } from 'react-navigation-stack'
 import { createAppContainer, createSwitchNavigator } from 'react-navigation'
@@ -6,9 +6,8 @@ import useInitialization from 'utils/hooks/useInitialization'
 import Loading from 'components/Loading'
 import LoginScreen from 'screens/LoginScreen'
 
-const Router = ({ authenticated }) => {
-  const [initialized, setInitialized] = useState(true)
-  // useInitialization({ setInitialized })
+const Router = ({ authenticated, initialized }) => {
+  useInitialization()
 
   const AuthenticatedRouter = createAppContainer(createSwitchNavigator({ LoginScreen }, { initialRouteName: 'LoginScreen' }))
 
@@ -25,7 +24,8 @@ const Router = ({ authenticated }) => {
 }
 
 Router.propTypes = {
-  authenticated: types.oneOfType([types.bool, types.string]).isRequired,
+  authenticated: types.bool.isRequired,
+  initialized: types.bool.isRequired
 }
 
 export default Router

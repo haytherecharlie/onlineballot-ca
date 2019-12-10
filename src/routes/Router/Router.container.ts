@@ -4,7 +4,8 @@ import {} from 'services/redux'
 import Router from './Router.component'
 
 export const state = (state) => ({
-  authenticated: pathOr(false, ['application', 'user', 'authenticated'])(state)
+  authenticated: pathOr(false, ['user', 'authenticated'])(state),
+  initialized: pathOr(false, ['universal', 'initialized'])(state)
 })
 
 export const dispatch = {}

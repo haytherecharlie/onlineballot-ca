@@ -15,6 +15,7 @@ export default {
   FOREGROUND_COLOR: darkMode ? BLACK : WHITE,
   PRIMARY_COLOR: darkMode ? `rgba(96, 57, 169, 1)` : `rgba(255, 255, 255, 1)`,
   SECONDARY_COLOR: darkMode ? `rgba(69, 158, 190, 1)` : `rgba(255, 255, 255, 1)`,
+  SPINNER_RADIUS: scale(40),
   FONT_SIZE_SMALL: scale(12),
   FONT_SIZE_MEDIUM: scale(14),
   FONT_SIZE_LARGE: scale(16),

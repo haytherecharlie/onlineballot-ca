@@ -1,10 +1,11 @@
-import { useEffect } from 'react'
-import store from 'services/redux'
+import React, { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
 import { INITIALIZE_APP } from 'services/redux/universal'
 
 const useInitialization = () => {
+  const dispatch = useDispatch()
   const runInitialization = () => {
-    store.dispatch({ type: INITIALIZE_APP })
+    dispatch({ type: INITIALIZE_APP })
   }
 
   useEffect(() => {

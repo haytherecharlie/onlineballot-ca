@@ -6,16 +6,16 @@ import types from 'prop-types'
 import * as S from './Loading.style'
 
 const Loading = ({ text, loading, children }) => {
-  // const animation = new Animated.Value(0)
+  const animation = new Animated.Value(0)
 
-  // useEffect(() => {
-  //   Animated.loop(Animated.timing(animation, { toValue: 1, duration: 2000 })).start()
-  // }, [Animated])
+  useEffect(() => {
+    Animated.loop(Animated.timing(animation, { toValue: 1, duration: 2000 })).start()
+  }, [Animated])
 
-  // const rotation = animation.interpolate({
-  //   inputRange: [0, 1],
-  //   outputRange: ['0deg', '1080deg']
-  // })
+  const rotation = animation.interpolate({
+    inputRange: [0, 1],
+    outputRange: ['0deg', '1080deg']
+  })
 
   switch (loading) {
     case false:
@@ -23,7 +23,7 @@ const Loading = ({ text, loading, children }) => {
     default:
       return (
         <S.LoadingWrapper>
-          {/* <Animated.View style={{ transform: [{ rotate: rotation }] }}>
+          <Animated.View style={{ transform: [{ rotate: rotation }] }}>
             <Svg width={theme.SPINNER_RADIUS} height={theme.SPINNER_RADIUS} x={0} y={0}>
               <Circle
                 cx={20}
@@ -36,7 +36,7 @@ const Loading = ({ text, loading, children }) => {
                 strokeLinecap={`round`}
               />
             </Svg>
-          </Animated.View> */}
+          </Animated.View>
           <S.LoadingText>{text}</S.LoadingText>
         </S.LoadingWrapper>
       )

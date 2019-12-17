@@ -6,7 +6,7 @@ const LoginScreen = () => {
   const [loading, toggleLoading] = useState(true)
 
   return (
-    <Loading loading={loading}>
+    <Loading loading={true}>
       <S.Title>LoginScreen</S.Title>
     </Loading>
   )

@@ -13,8 +13,8 @@ const WHITE = '#FFFFFF'
 export default {
   BACKGROUND_COLOR: darkMode ? DARK_GRAY : LIGHT_GRAY,
   FOREGROUND_COLOR: darkMode ? BLACK : WHITE,
-  PRIMARY_COLOR: darkMode ? `rgba(96, 57, 169, 1)` : `rgba(255, 255, 255, 1)`,
-  SECONDARY_COLOR: darkMode ? `rgba(69, 158, 190, 1)` : `rgba(255, 255, 255, 1)`,
+  PRIMARY_COLOR: darkMode ? `rgba(96, 57, 169, 1)` : `rgba(0, 0, 0, 1)`,
+  SECONDARY_COLOR: darkMode ? `rgba(69, 158, 190, 1)` : `rgba(0, 0, 0, 1)`,
   SPINNER_RADIUS: scale(40),
   FONT_SIZE_SMALL: scale(12),
   FONT_SIZE_MEDIUM: scale(14),

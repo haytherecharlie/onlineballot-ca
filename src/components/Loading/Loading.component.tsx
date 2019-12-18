@@ -31,9 +31,9 @@ const Loading = ({ text, loading, children }) => {
                 r={18}
                 strokeWidth={4}
                 stroke={theme.PRIMARY_COLOR}
-                fill={`transparent`}
+                fill="transparent"
                 strokeDasharray={Math.PI * 25}
-                strokeLinecap={`round`}
+                strokeLinecap="round"
               />
             </Svg>
           </Animated.View>

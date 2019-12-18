@@ -1,8 +1,12 @@
 {
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "dev": "expo start -c",
-    "update": "npx npm-check-updates"
+    "dev": "npx expo start -c",
+    "ios": "npx expo start --ios",
+    "publish": "npx expo publish",
+    "setup": "npm ci",
+    "update": "npx npm-check-updates",
+    "web": "npx expo start --web"
   },
   "dependencies": {
     "expo": "~36.0.0",

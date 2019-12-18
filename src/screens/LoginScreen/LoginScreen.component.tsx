@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
+import { withNavigation } from 'react-navigation'
 import Loading from 'components/Loading'
 import * as S from './LoginScreen.style'
 
 const LoginScreen = ({ initialized }) => {
-
   return (
     <Loading loading={!initialized}>
       <S.Title>LoginScreen</S.Title>
@@ -11,4 +11,4 @@ const LoginScreen = ({ initialized }) => {
   )
 }
 
-export default LoginScreen
+export default withNavigation(LoginScreen)

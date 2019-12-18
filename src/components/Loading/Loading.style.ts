@@ -3,7 +3,7 @@ import { View, Text } from 'react-native'
 import theme from 'assets/styles/theme.style'
 
 export const ChildWrapper = styled(View)({
-  height: '100%',
+  minHeight: typeof document === 'object' ? `calc(100vh - 66px)` : '100%',
   width: '100%',
   display: 'flex',
   alignItems: 'center',

@@ -30,7 +30,7 @@ const Loading = ({ text, loading, children }) => {
                 cy={20}
                 r={18}
                 strokeWidth={4}
-                stroke={theme.PRIMARY_COLOR}
+                stroke={theme.SECONDARY_COLOR}
                 fill="transparent"
                 strokeDasharray={Math.PI * 25}
                 strokeLinecap="round"

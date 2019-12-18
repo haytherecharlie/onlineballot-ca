@@ -5,16 +5,17 @@ const guidelineWidth = 350
 const darkMode = Appearance.getColorScheme() === 'dark'
 const scale = (size) => `${(width / guidelineWidth) * size}px`
 
-const BLACK = '#000000'
-const DARK_GRAY = '#222222'
-const LIGHT_GRAY = '#F8F8F8'
-const WHITE = '#FFFFFF'
+const PURPLE = `rgba(96, 57, 169, 1)`
+const BLACK = `#000000`
+const DARK_GRAY = `#222222`
+const LIGHT_GRAY = `#F8F8F8`
+const WHITE = `#FFFFFF`
 
 export default {
   BACKGROUND_COLOR: darkMode ? DARK_GRAY : LIGHT_GRAY,
-  FOREGROUND_COLOR: darkMode ? BLACK : WHITE,
-  PRIMARY_COLOR: darkMode ? `rgba(96, 57, 169, 1)` : `rgba(0, 0, 0, 1)`,
-  SECONDARY_COLOR: darkMode ? `rgba(69, 158, 190, 1)` : `rgba(0, 0, 0, 1)`,
+  FOREGROUND_COLOR: darkMode ?  BLACK : WHITE,
+  PRIMARY_COLOR: darkMode ? WHITE : BLACK,
+  SECONDARY_COLOR: PURPLE,
   SPINNER_RADIUS: 40,
   FONT_SIZE_SMALL: scale(12),
   FONT_SIZE_MEDIUM: scale(14),

@@ -6,8 +6,8 @@ export const ChildWrapper = styled(View)({
   height: '100%',
   width: '100%',
   display: 'flex',
-  alignItems: 'stretch',
-  justifyContent: 'flex-start',
+  alignItems: 'center',
+  justifyContent: 'center',
   background: theme.BACKGROUND_COLOR
 })
 

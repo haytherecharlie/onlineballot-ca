@@ -1,9 +1,12 @@
 {
   "expo": {
-    "name": "expo-quickstart",
-    "slug": "expoquickstart",
+    "name": "Telus Me",
+    "slug": "telus-me",
     "privacy": "public",
     "sdkVersion": "36.0.0",
+    "packagerOpts": {
+      "nonPersistent": false
+    },
     "platforms": [ "ios", "android", "web" ],
     "version": "1.0.0",
     "orientation": "portrait",

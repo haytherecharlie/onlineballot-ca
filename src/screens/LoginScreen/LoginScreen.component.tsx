@@ -2,11 +2,10 @@ import React, { useState } from 'react'
 import Loading from 'components/Loading'
 import * as S from './LoginScreen.style'
 
-const LoginScreen = () => {
-  const [loading, toggleLoading] = useState(true)
+const LoginScreen = ({ initialized }) => {
 
   return (
-    <Loading loading={true}>
+    <Loading loading={!initialized}>
       <S.Title>LoginScreen</S.Title>
     </Loading>
   )

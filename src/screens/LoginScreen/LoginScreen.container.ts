@@ -1,8 +1,11 @@
+import { pathOr } from 'ramda'
 import { connect } from 'react-redux'
 import LoginScreen from './LoginScreen.component'
 
 export const state = (state) => {
-  return {}
+  return {
+    initialized: pathOr(false, ['universal', 'initialized'])(state)
+  }
 }
 
 export const dispatch = {}

@@ -16,8 +16,8 @@ const Router = ({ authenticated, initialized }) => {
 
   useEffect(() => {
     if (typeof document === 'object') {
-      const rootElement = document.querySelector('#root')
-      rootElement.setAttribute(`style`, `background:${theme.BACKGROUND_COLOR}; border: 1px solid blue;`)
+      document.querySelector('#root').setAttribute(`style`, `background:${theme.BACKGROUND_COLOR}; border: 1px solid blue;`)
+      document.title = "Telus Me | Your Personal HR Platform"
     }
   }, [])
 

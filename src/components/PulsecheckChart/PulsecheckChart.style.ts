@@ -4,14 +4,16 @@ import { View, Text } from 'react-native'
 
 export const Wrapper = styled(View)({
   display: 'flex',
-  alignItems: 'center',
+  alignItems: 'flex-start',
   justifyContent: 'center',
   margin: `20px 0`
 })
 
 export const Title = styled(Text)({
   fontSize: 20,
-  color: theme.PRIMARY_COLOR
+  color: theme.PRIMARY_COLOR,
+  fontWeight: 900,
+  margin: 10
 })
 
 export const chartConfig = (type) => ({

@@ -1,5 +1,5 @@
 const defaultState = {
-  authenticated: false,
+  authenticated: true,
   data: {
     email: "charlie.hay@telus.com",
     name: "Charlie Hay",

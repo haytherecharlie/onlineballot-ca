@@ -23,6 +23,7 @@ const PulsecheckChart = ({ chart, type }) => {
             height={220}
             chartConfig={S.chartConfig(type)}
             style={S.lineChartStyle}
+            fromZero={true}
           />
         )
       case 'bar':

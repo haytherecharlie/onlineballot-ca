@@ -8,7 +8,8 @@ export const ChildWrapper = styled(View)({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  background: theme.BACKGROUND_COLOR
+  background: theme.BACKGROUND_COLOR,
+  padding: '0 20px'
 })
 
 export const LoadingWrapper = styled(View)({

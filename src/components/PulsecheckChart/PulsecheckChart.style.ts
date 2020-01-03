@@ -11,7 +11,8 @@ export const Wrapper = styled(View)({
 
 export const Title = styled(Text)({
   fontSize: 20,
-  color: theme.PRIMARY_COLOR,
+  color: `#444`,
+  fontFamily: 'habichat',
   fontWeight: 900,
   margin: 10
 })

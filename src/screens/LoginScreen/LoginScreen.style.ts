@@ -18,12 +18,12 @@ export const Logo = styled(Image)({
 })
 
 export const Input = styled(TextInput)({
-  marginTop: 20,
+  marginTop: 10,
   width: `80%`,
   maxWidth: `400px`,
   padding: '10px 20px',
   border: `1px solid ${theme.HIGHLIGHT_COLOR}`,
-  borderRadius: 20,
+  borderRadius: 25,
   textAlign: 'center',
   background: `rgba(141, 53, 240, 0.05)`
 })

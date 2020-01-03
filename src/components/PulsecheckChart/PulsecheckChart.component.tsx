@@ -4,28 +4,13 @@ import { LineChart, BarChart } from 'react-native-chart-kit'
 import theme from 'assets/styles/theme.style'
 import * as S from './PulsecheckChart.style'
 
-const PulsecheckChart = ({ chart, type }) => {
+const PulsecheckChart = ({ chart, type, data }) => {
   const screenWidth = Math.min(Dimensions.get('window').width - 40, 700)
-  const rawData = { data: [4, 7, 9, 6, 7, 9] }
-  const data = {
-    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-    datasets: [rawData],
-    fromZero: true
-  }
 
   const renderChart = () => {
     switch (chart) {
       case 'line':
-        return (
-          <LineChart
-            data={data}
-            width={screenWidth}
-            height={220}
-            chartConfig={S.chartConfig(type)}
-            style={S.lineChartStyle}
-            fromZero={true}
-          />
-        )
+        return <LineChart data={data} width={screenWidth} height={220} chartConfig={S.chartConfig(type)} style={S.lineChartStyle} fromZero={true} />
       case 'bar':
         return (
           <BarChart

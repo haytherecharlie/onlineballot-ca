@@ -14,8 +14,9 @@ export const Wrapper = styled(View)({
 })
 
 export const Logo = styled(Image)({
-  height: 20,
-  width: 150
+  height: 22,
+  width: 150,
+  marginTop: 5
 })
 
 export const Menu = styled(Text)({

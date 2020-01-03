@@ -21,7 +21,8 @@ const LoginScreen = ({ initialized }) => {
       try {
         const { user } = await auth.signInWithEmailAndPassword(emailInput, passwordInput)
         const { providerData, uid } = user
-        return dispatch({ type: TOGGLE_AUTH, status: true, value: { ...providerData, uid } })
+        const { displayName, email, photoUrl } = providerData
+        return dispatch({ type: TOGGLE_AUTH, status: true, value: { uid, displayName, email, photoUrl } })
       } catch (err) {
         return setPasswordError('Invalid Password')
       }

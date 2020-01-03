@@ -1,11 +1,33 @@
 import { createStore, combineReducers } from 'redux'
 import devToolsEnhancer from 'remote-redux-devtools'
-import { universalReducer } from './universal'
-import { userReducer } from './user'
 
-const rootReducer = combineReducers({
-  universal: universalReducer,
-  user: userReducer
-})
+export const INITIALIZE_APP = 'INITIALIZE_APP'
+export const TOGGLE_AUTH = 'TOGGLE_AUTH'
 
-export default __DEV__ ? createStore(rootReducer, devToolsEnhancer()) : createStore(rootReducer)
+const defaultState = {
+  universal: {
+    initialized: false
+  },
+  user: {
+    authenticated: false,
+    data: {
+      email: 'charlie.hay@telus.com',
+      name: 'Charlie Hay',
+      photo: 'https://avatars1.githubusercontent.com/u/43853551?s=460&v=4',
+      team: 'Spacejam'
+    }
+  }
+}
+
+export const reducer = (state = defaultState, action) => {
+  switch (action.type) {
+    case INITIALIZE_APP:
+      return { ...state, universal: { ...state.universal, initialized: true } }
+    case TOGGLE_AUTH:
+      return { ...state, user: { authenticated: action.status, data: action.value } }
+    default:
+      return state
+  }
+}
+
+export default __DEV__ ? createStore(reducer, devToolsEnhancer()) : createStore(reducer)

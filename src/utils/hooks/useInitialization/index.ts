@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import { INITIALIZE_APP } from 'services/redux/universal'
+import { INITIALIZE_APP } from 'services/redux'
 
 const useInitialization = () => {
   const dispatch = useDispatch()

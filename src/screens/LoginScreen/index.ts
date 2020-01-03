@@ -1,3 +1,3 @@
-import LoginScreen from './LoginScreen.container'
+import LoginScreen from './LoginScreen.component'
 
 export default LoginScreen

@@ -39,6 +39,8 @@ const Router = ({ authenticated, initialized }) => {
 
   const UnauthenticatedRouter = createAppContainer(createSwitchNavigator({ LoginScreen }, { initialRouteName: 'LoginScreen' }))
 
+  console.log(`${initialized} | ${authenticated}`)
+
   switch (`${initialized} | ${authenticated}`) {
     case `true | true`:
       return <AuthenticatedRouter />

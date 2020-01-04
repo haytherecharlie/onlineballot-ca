@@ -25,7 +25,10 @@ export const Input = styled(TextInput)({
   border: `1px solid ${theme.HIGHLIGHT_COLOR}`,
   borderRadius: 25,
   textAlign: 'center',
-  background: `rgba(141, 53, 240, 0.05)`
+  background: `rgba(141, 53, 240, 0.05)`,
+  [`:focus`]: {
+    outline: `none`
+  }
 })
 
 export const InputLabel = styled(Text)({

@@ -6,9 +6,6 @@ import store from './src/services/redux'
 import Router from './src/routes/Router'
 
 const App = () => {
-  useEffect(() => {
-    console.disableYellowBox = true
-  }, [])
   return (
     <AppearanceProvider>
       <Provider store={store}>

@@ -9,6 +9,7 @@
     "web": "npx expo start --web"
   },
   "dependencies": {
+    "date-fns": "^2.8.1",
     "expo": "~36.0.0",
     "expo-font": "^8.0.0",
     "expo-web-browser": "^8.0.0",
@@ -23,11 +24,13 @@
     "react-native-event-source": "^1.1.0",
     "react-native-gesture-handler": "~1.5.2",
     "react-native-ionicons": "^4.6.3",
+    "react-native-ratings": "^6.5.0",
     "react-native-reanimated": "~1.4.0",
     "react-native-screens": "2.0.0-alpha.12",
     "react-native-smooth-pincode-input": "^1.0.9",
     "react-native-svg": "9.13.3",
     "react-native-swiper": "^1.5.14",
+    "react-native-vector-icons": "^6.6.0",
     "react-native-web": "~0.11.7",
     "react-navigation": "^4.0.10",
     "react-navigation-stack": "^1.10.3",

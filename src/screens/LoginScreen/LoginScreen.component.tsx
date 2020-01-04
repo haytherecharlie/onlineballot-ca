@@ -24,7 +24,7 @@ const LoginScreen = ({ initialized }) => {
         const { displayName, email, photoUrl } = providerData
         return dispatch({ type: TOGGLE_AUTH, status: true, value: { uid, displayName, email, photoUrl } })
       } catch (err) {
-        return setPasswordError('Invalid Password')
+        return setPasswordError('Invalid Email or Password')
       }
     }
     return setPasswordError('Invalid Email or Password')

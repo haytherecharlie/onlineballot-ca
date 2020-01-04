@@ -3,6 +3,8 @@ import devToolsEnhancer from 'remote-redux-devtools'
 
 export const INITIALIZE_APP = 'INITIALIZE_APP'
 export const TOGGLE_AUTH = 'TOGGLE_AUTH'
+export const SET_CHART_DATA = 'SET_CHART_DATA'
+
 export const SET_JOB_SATISFACTION = `SET_JOB_SATISFACTION`
 export const SET_MANAGER_APPROVAL = `SET_MANAGER_APPROVAL`
 export const SET_MY_PERFORMANCE = `SET_MY_PERFORMANCE`
@@ -13,10 +15,10 @@ const defaultState = {
     initialized: false
   },
   chartData: {
-    jobSatisfaction: { labels: [''], datasets: [{ data: [1] }], fromZero: true },
-    managerApproval: { labels: [''], datasets: [{ data: [1] }], fromZero: true },
-    myPerformance: { labels: [''], datasets: [{ data: [1] }], fromZero: true },
-    teamRating: { labels: [''], datasets: [{ data: [1] }], fromZero: true }
+    job_satisfaction: { labels: [''], datasets: [{ data: [1] }], fromZero: true },
+    manager_approval: { labels: [''], datasets: [{ data: [1] }], fromZero: true },
+    my_performance: { labels: [''], datasets: [{ data: [1] }], fromZero: true },
+    team_rating: { labels: [''], datasets: [{ data: [1] }], fromZero: true }
   },
   user: {
     authenticated: false,
@@ -36,6 +38,8 @@ export const reducer = (state = defaultState, action) => {
       return { ...state, universal: { ...state.universal, initialized: true } }
     case TOGGLE_AUTH:
       return { ...state, user: { authenticated: action.status, data: action.value } }
+    case SET_CHART_DATA:
+      return { ...state, chartData: action.value }
     case SET_JOB_SATISFACTION:
       return { ...state, chartData: { ...state.chartData, jobSatisfaction: action.value } }
     case SET_MANAGER_APPROVAL:

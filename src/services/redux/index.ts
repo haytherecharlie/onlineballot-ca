@@ -21,7 +21,7 @@ const defaultState = {
     team_rating: { labels: [''], datasets: [{ data: [1] }], fromZero: true }
   },
   user: {
-    authenticated: false,
+    authenticated: true,
     data: {
       uid: `QJVNK1nfrdQi22gj0QlDx7KMlFF2`,
       email: 'charlie.hay@telus.com',

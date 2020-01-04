@@ -3,7 +3,6 @@ import { ScrollView, Text, TouchableOpacity } from 'react-native'
 import { withNavigation } from 'react-navigation'
 import { useSelector } from 'react-redux'
 import useChartData from 'utils/hooks/useChartData'
-import isWeb from 'utils/helpers/isWeb'
 import Loading from 'components/Loading'
 import PulsecheckChart from 'components/PulsecheckChart'
 import Spacer from 'components/Spacer'
@@ -16,16 +15,18 @@ const DashboardScreen = ({ navigation }) => {
 
   return (
     <Loading loading={false}>
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <PulsecheckChart chart="line" type="manager" data={manager_approval} />
-        <PulsecheckChart chart="bar" type="job" data={job_satisfaction} />
-        <PulsecheckChart chart="bezier" type="performance" data={my_performance} />
-        <PulsecheckChart chart="bar" type="team" data={team_rating} />
-        <Spacer />
-      </ScrollView>
-      <S.Button onPress={() => navigation.navigate('RatingScreen')}>
-        <S.Icon name="md-add" color={theme.SECONDARY_COLOR} size={25} />
-      </S.Button>
+      <S.Wrapper>
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <PulsecheckChart chart="line" type="manager" data={manager_approval} />
+          <PulsecheckChart chart="bar" type="job" data={job_satisfaction} />
+          <PulsecheckChart chart="bezier" type="performance" data={my_performance} />
+          <PulsecheckChart chart="bar" type="team" data={team_rating} />
+          <Spacer />
+        </ScrollView>
+        <S.Button onPress={() => navigation.navigate('RatingScreen')}>
+          <S.Icon name="md-add" color={theme.SECONDARY_COLOR} size={25} />
+        </S.Button>
+      </S.Wrapper>
     </Loading>
   )
 }

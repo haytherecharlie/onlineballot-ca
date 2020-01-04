@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, Fragment } from 'react'
 import types from 'prop-types'
 import { useDispatch } from 'react-redux'
 import { createStackNavigator } from 'react-navigation-stack'
@@ -13,6 +13,7 @@ import Loading from 'components/Loading'
 import LoginScreen from 'screens/LoginScreen'
 import DashboardScreen from 'screens/DashboardScreen'
 import RatingScreen from 'screens/RatingScreen'
+import * as S from './Router.style'
 
 const Router = ({ authenticated, initialized }) => {
   useInitialization()
@@ -27,17 +28,26 @@ const Router = ({ authenticated, initialized }) => {
 
   const AuthenticatedRouter = createAppContainer(
     createStackNavigator(
-      { DashboardScreen, RatingScreen },
+      {
+        DashboardScreen: {
+          screen: DashboardScreen,
+          navigationOptions: {
+            headerLeft: () => <Fragment />
+          }
+        },
+        RatingScreen: {
+          screen: RatingScreen
+        }
+      },
       {
         initialRouteName: 'DashboardScreen',
         defaultNavigationOptions: {
           headerTitle: () => <Logo />,
           headerRight: () => (
-            <Ionicon
+            <S.Icon
               name="md-log-out"
               color={theme.HIGHLIGHT_COLOR}
               size={25}
-              style={{ marginRight: 10 }}
               onPress={() => dispatch({ type: TOGGLE_AUTH, status: false, value: {} })}
             />
           ),

@@ -47,4 +47,4 @@ export const reducer = (state = defaultState, action) => {
   }
 }
 
-export default __DEV__ ? createStore(reducer, devToolsEnhancer()) : createStore(reducer)
+export default __DEV__ ? createStore(reducer) : createStore(reducer)

@@ -25,14 +25,19 @@ const LoginScreen = ({ initialized }) => {
         const { displayName, email, photoUrl } = providerData
 
         const responses = await db.doc(`pulsecheck/${uid}/responses/job_satisfaction`).get()
-        const data = await responses.data()
+        const data = (await responses.data()) || undefined
         if (!data) {
+          const date = new Date()
+          const baseData = {
+            [`${format(date.setDate(date.getDate() - 3), `yyyy-MM-dd`)}`]: 0,
+            [`${format(date.setDate(date.getDate() - 2), `yyyy-MM-dd`)}`]: 0,
+            [`${format(date.setDate(date.getDate() - 1), `yyyy-MM-dd`)}`]: 0
+          }
           const batch = db.batch()
-          const date = format(new Date().getTime(), `yyyy-MM-dd`)
-          batch.set(db.doc(`pulsecheck/${uid}/responses/job_satisfaction`), { [`${date}`]: 0 })
-          batch.set(db.doc(`pulsecheck/${uid}/responses/manager_approval`), { [`${date}`]: 0 })
-          batch.set(db.doc(`pulsecheck/${uid}/responses/my_performance`), { [`${date}`]: 0 })
-          batch.set(db.doc(`pulsecheck/${uid}/responses/team_rating`), { [`${date}`]: 0 })
+          batch.set(db.doc(`pulsecheck/${uid}/responses/job_satisfaction`), baseData)
+          batch.set(db.doc(`pulsecheck/${uid}/responses/manager_approval`), baseData)
+          batch.set(db.doc(`pulsecheck/${uid}/responses/my_performance`), baseData)
+          batch.set(db.doc(`pulsecheck/${uid}/responses/team_rating`), baseData)
           await batch.commit()
         }
         return dispatch({ type: TOGGLE_AUTH, status: true, value: { uid, displayName, email, photoUrl } })

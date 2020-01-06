@@ -1,3 +1,3 @@
-import DashboardScreen from './DashboardScreen.container'
+import DashboardScreen from './DashboardScreen.component'
 
 export default DashboardScreen

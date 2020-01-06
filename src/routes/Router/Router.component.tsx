@@ -30,17 +30,17 @@ const Router = ({ authenticated, initialized }) => {
     createStackNavigator(
       {
         DashboardScreen: {
-          screen: DashboardScreen,
+          screen: DashboardScreen
+        },
+        RatingScreen: {
+          screen: RatingScreen,
           navigationOptions: {
             headerLeft: () => <Fragment />
           }
-        },
-        RatingScreen: {
-          screen: RatingScreen
         }
       },
       {
-        initialRouteName: 'DashboardScreen',
+        initialRouteName: 'RatingScreen',
         defaultNavigationOptions: {
           headerTitle: () => <Logo />,
           headerRight: () => (

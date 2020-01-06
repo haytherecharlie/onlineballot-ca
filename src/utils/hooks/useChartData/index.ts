@@ -13,14 +13,18 @@ const useChartData = () => {
       const data = val.data()
       const category = val.id
       const keys = Object.keys(data)
+      const shortKeys = keys.map((key) => key.substring(5, key.length).replace('-', '/'))
       const values = Object.values(data)
-      chartData[`${category}`] = { labels: keys, datasets: [{ data: values }], fromZero: true }
+      chartData[`${category}`] = { labels: shortKeys, datasets: [{ data: values }], fromZero: true }
     })
     dispatch({ type: SET_CHART_DATA, value: chartData })
   }
 
   useEffect(() => {
-    const listener = db.doc(`pulsecheck/${uid}`).collection(`responses`).onSnapshot(handleSnapshot)
+    const listener = db
+      .doc(`pulsecheck/${uid}`)
+      .collection(`responses`)
+      .onSnapshot(handleSnapshot)
     return () => listener()
   }, [])
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { withNavigation } from 'react-navigation'
 import { Rating, AirbnbRating } from 'react-native-ratings'
+import useChartData from 'utils/hooks/useChartData'
 import { format } from 'date-fns'
 import { db } from 'services/firebase'
 import Spacer from 'components/Spacer'
@@ -9,7 +10,9 @@ import theme from 'assets/styles/theme.style'
 import * as S from './RatingScreen.style'
 
 const RatingScreen = ({ navigation }) => {
+  useChartData()
   const { uid } = useSelector((s) => s.user.data)
+  const { job_satisfaction, manager_approval, my_performance, team_rating } = useSelector((s) => s.chartData)
 
   const handleRating = (type, rating) => {
     const date = format(new Date().getTime(), `yyyy-MM-dd`)
@@ -67,7 +70,7 @@ const RatingScreen = ({ navigation }) => {
         />
       </S.Box>
       <S.Button onPress={() => navigation.navigate('DashboardScreen')}>
-        <S.ButtonText>Finish</S.ButtonText>
+        <S.ButtonText>View Results &#x2192;</S.ButtonText>
       </S.Button>
       <Spacer />
     </S.Wrapper>

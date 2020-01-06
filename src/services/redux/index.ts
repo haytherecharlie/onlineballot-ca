@@ -15,20 +15,14 @@ const defaultState = {
     initialized: false
   },
   chartData: {
-    job_satisfaction: { labels: [''], datasets: [{ data: [1] }], fromZero: true },
-    manager_approval: { labels: [''], datasets: [{ data: [1] }], fromZero: true },
-    my_performance: { labels: [''], datasets: [{ data: [1] }], fromZero: true },
-    team_rating: { labels: [''], datasets: [{ data: [1] }], fromZero: true }
+    job_satisfaction: { labels: [''], datasets: [{ data: [0] }], fromZero: true },
+    manager_approval: { labels: [''], datasets: [{ data: [0] }], fromZero: true },
+    my_performance: { labels: [''], datasets: [{ data: [0] }], fromZero: true },
+    team_rating: { labels: [''], datasets: [{ data: [0] }], fromZero: true }
   },
   user: {
-    authenticated: true,
-    data: {
-      uid: `QJVNK1nfrdQi22gj0QlDx7KMlFF2`,
-      email: 'charlie.hay@telus.com',
-      name: 'Charlie Hay',
-      photo: 'https://avatars1.githubusercontent.com/u/43853551?s=460&v=4',
-      team: 'Spacejam'
-    }
+    authenticated: false,
+    data: {}
   }
 }
 

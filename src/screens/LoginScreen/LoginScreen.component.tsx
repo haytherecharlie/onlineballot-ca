@@ -51,6 +51,7 @@ const LoginScreen = ({ initialized }) => {
           setPasswordError('')
         }}
         onBlur={checkEmail}
+        onSubmitEditing={onSubmit}
       />
       <S.InputLabel>{emailError}</S.InputLabel>
       <S.Input
@@ -64,6 +65,7 @@ const LoginScreen = ({ initialized }) => {
         autoCompleteType="password"
         secureTextEntry={true}
         placeholder="Enter your password"
+        onSubmitEditing={onSubmit}
       />
       <S.InputLabel>{passwordError}</S.InputLabel>
       <S.Button onPress={onSubmit}>

@@ -1,0 +1,48 @@
+{
+  "name": "hosting",
+  "scripts": {
+    "build": "gatsby build",
+    "deploy": "firebase deploy --only hosting",
+    "dev": "rm -rf public && set DEBUG=SSG* && gatsby develop -H 0.0.0.0",
+    "format": "prettier --write \"**/*.{ts,tsx,json,md}\"",
+    "serve": "gatsby serve -p 3000"
+  },
+  "dependencies": {
+    "animate.css": "^3.7.2",
+    "babel-plugin-styled-components": "^1.10.7",
+    "firebase": "^7.10.0",
+    "gatsby": "2.19.35",
+    "gatsby-image": "^2.2.43",
+    "gatsby-plugin-intl": "^0.3.3",
+    "gatsby-plugin-manifest": "^2.2.45",
+    "gatsby-plugin-offline": "^3.0.38",
+    "gatsby-plugin-react-helmet": "^3.1.23",
+    "gatsby-plugin-react-redux": "^1.1.0-0",
+    "gatsby-plugin-root-import": "^2.0.5",
+    "gatsby-plugin-styled-components": "^3.1.20",
+    "gatsby-plugin-transition-link": "^1.18.0",
+    "gatsby-plugin-typescript": "^2.2.2",
+    "gatsby-plugin-use-dark-mode": "^1.1.2",
+    "gatsby-remark-prismjs": "^3.3.33",
+    "gatsby-source-filesystem": "^2.1.51",
+    "gatsby-transformer-remark": "^2.6.56",
+    "gsap": "^3.2.4",
+    "prismjs": "^1.19.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-google-places-autocomplete": "^1.6.2",
+    "react-helmet": "^5.2.1",
+    "react-ionicons": "^3.1.4",
+    "react-redux": "^7.2.0",
+    "redux": "^4.0.5",
+    "styled-components": "^5.0.1",
+    "use-dark-mode": "^2.3.1"
+  },
+  "devDependencies": {
+    "firebase-tools": "^7.14.0",
+    "prettier": "^1.19.1",
+    "redux-devtools-extension": "^2.13.8",
+    "typescript": "^3.8.3"
+  }
+}

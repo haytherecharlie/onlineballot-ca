@@ -1,0 +1,21 @@
+{
+  "metadata": {
+    "title": "LYAC Election | Young London",
+    "description": "Vote for your candidate for the London Youth Advisory Council.",
+    "author": "Charles Hay",
+    "siteUrl": "https://votelyac.ca"
+  },
+  "manifest": {
+    "name": "LYAC Election",
+    "short_name": "lyac-election",
+    "start_url": "/",
+    "background_color": "#FFF",
+    "theme_color": "#000",
+    "display": "minimal-ui"
+  },
+  "locale": {
+    "languages": ["en", "fr"],
+    "defaultLanguage": "en",
+    "redirect": true
+  }
+}

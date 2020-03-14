@@ -2,28 +2,41 @@ import styled from 'styled-components'
 import theme from 'assets/styles/theme.style'
 
 export const WardFinder = styled('div')({
-  flex: 1,
+  boxSizing: 'border-box',
+  position: 'absolute',
+  top: (p) => p.top,
+  left: `50%`,
+  transform: `translate(-50%, -50%)`,
   display: 'flex',
   flexDirection: 'column',
-  alignItems: 'center',
-  justifyContent: 'center',
+  alignItems: 'stretch',
+  justifyContent: 'stretch',
   maxWidth: 600,
-  width: `100%`
+  width: `100%`,
+  minWidth: 300,
+  transition: `top .5s`
 })
 
 export const Logo = styled('img')({
-  height: 200,
-  width: `auto`,
+  height: `auto`,
+  width: 250,
+  margin: `auto`,
   [theme.MEDIUM_QUERY]: {
-    height: 150
+    width: 200
   }
 })
 
 export const Divider = styled('div')({
-  width: '100%',
+  width: '90%',
   height: 1,
   background: theme.PRIMARY_COLOR,
-  margin: 20
+  margin: `20px auto`
+})
+
+export const HiddenWrapper = styled('div')({
+  display: `flex`,
+  flexDirection: `column`,
+  position: 'relative'
 })
 
 export const Title = styled('h1')({
@@ -37,5 +50,31 @@ export const Title = styled('h1')({
 export const Paragraph = styled('p')({
   textAlign: 'center',
   fontSize: theme.FONT_SMALL,
-  opacity: 0.6
+  opacity: 0.6,
+  padding: `0 20px`,
+  margin: `10px 0`
+})
+
+export const PlaceInput = styled('input')({
+  position: 'absolute',
+  bottom: (p) => p.bottom,
+  left: `50%`,
+  transform: `translateX(-50%)`,
+  transition: `bottom .5s`,
+  boxSizing: 'border-box',
+  margin: `10px auto`,
+  maxWidth: 400,
+  width: `90%`,
+  padding: `10px 15px 8px 15px`,
+  border: `1px solid ${theme.PRIMARY_COLOR}`,
+  borderRadius: 25,
+  color: theme.DEFAULT_COLOR,
+  background: `rgba(141, 53, 240, 0.05)`,
+  '&::placeholder': {
+    color: '#777'
+  },
+  '&:focus': {
+    outline: 'none',
+    boxShadow: `0 0 3px blue`
+  }
 })

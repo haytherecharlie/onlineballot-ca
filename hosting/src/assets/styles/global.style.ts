@@ -17,9 +17,6 @@ const GlobalStyle = createGlobalStyle({
   ul: { marginBottom: '1rem' },
   address: { fontStyle: 'normal' },
   body: {
-    width: `100vw`,
-    boxSizing: 'border-box',
-    borderTop: `3px solid ${theme.PRIMARY_COLOR}`,
     margin: '0',
     fontFamily: 'lyac',
     color: theme.DEFAULT_COLOR,

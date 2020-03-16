@@ -4,9 +4,9 @@ import theme from 'assets/styles/theme.style'
 export const WardFinder = styled('div')({
   boxSizing: 'border-box',
   position: 'absolute',
-  top: (p) => p.top,
+  top: p => (p.collapsed ? '0px' : '50%'),
   left: `50%`,
-  transform: `translate(-50%, -50%)`,
+  transform: p => (p.collapsed ? `translate(-50%, 0%)` : `translate(-50%, -50%)`),
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'stretch',
@@ -14,7 +14,8 @@ export const WardFinder = styled('div')({
   maxWidth: 600,
   width: `100%`,
   minWidth: 300,
-  transition: `top .5s`
+  transition: `top .5s, transform .5s`,
+  padding: 20
 })
 
 export const Logo = styled('img')({
@@ -27,16 +28,18 @@ export const Logo = styled('img')({
 })
 
 export const Divider = styled('div')({
-  width: '90%',
+  width: '100%',
   height: 1,
   background: theme.PRIMARY_COLOR,
-  margin: `20px auto`
+  margin: `20px auto 0px auto`
 })
 
 export const HiddenWrapper = styled('div')({
   display: `flex`,
   flexDirection: `column`,
-  position: 'relative'
+  position: 'relative',
+  transform: p => (p.collapsed ? `translateY(-100%)` : `translateY(0%)`),
+  transition: `transform .5s`
 })
 
 export const Title = styled('h1')({
@@ -51,16 +54,14 @@ export const Paragraph = styled('p')({
   textAlign: 'center',
   fontSize: theme.FONT_SMALL,
   opacity: 0.6,
-  padding: `0 20px`,
   margin: `10px 0`
 })
 
 export const PlaceInput = styled('input')({
   position: 'absolute',
-  bottom: (p) => p.bottom,
+  top: '0%',
   left: `50%`,
   transform: `translateX(-50%)`,
-  transition: `bottom .5s`,
   boxSizing: 'border-box',
   margin: `10px auto`,
   maxWidth: 400,

@@ -10,7 +10,7 @@
     "short_name": "lyac-election",
     "start_url": "/",
     "background_color": "#FFF",
-    "theme_color": "#000",
+    "theme_color": "#5A3DA3",
     "display": "minimal-ui"
   },
   "locale": {

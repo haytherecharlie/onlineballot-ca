@@ -8,3 +8,6 @@ export const TOGGLE_MODAL = 'TOGGLE_MODAL'
 export const CHANGE_SLIDE = 'CHANGE_SLIDE'
 export const TOGGLE_NAV = 'TOGGLE_NAV'
 export const SET_DIMENSIONS = 'SET_DIMENSIONS'
+
+// Address Actions
+export const SET_ADDRESS = 'SET_ADDRESS'

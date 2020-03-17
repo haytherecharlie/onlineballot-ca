@@ -1,21 +1,20 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
 import AutoComplete from 'react-google-places-autocomplete'
 import logo from 'assets/images/lyac.png'
 import AddressInput from 'atoms/AddressInput'
 import AddressSuggestions from 'atoms/AddressSuggestions'
+import * as A from 'services/redux/actions'
 import * as S from './WardFinder.style'
 
 const WardFinder = () => {
-  // const [collapsed, setCollapsed] = useState(false)
+  const dispatch = useDispatch()
   const [value, setValue] = useState('')
 
-  const blurInput = () => {
-    // setCollapsed(false)
-  }
+  const blurInput = () => {}
 
   const focusInput = () => {
     setValue('')
-    // setCollapsed(true)
   }
 
   const changeInput = (e, onChange) => {
@@ -23,9 +22,9 @@ const WardFinder = () => {
     onChange(e)
   }
 
-  const selectPlaceInput = ({ description }) => {
-    console.log(description)
-    setValue(description)
+  const selectPlaceInput = place => {
+    dispatch({ type: A.SET_ADDRESS, value: place })
+    setValue(place.description)
   }
 
   return (

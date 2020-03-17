@@ -45,7 +45,6 @@ export const HiddenWrapper = styled('div')({
 export const Title = styled('h1')({
   textAlign: 'center',
   fontSize: theme.FONT_LARGE,
-  color: theme.PRIMARY_COLOR,
   [theme.MEDIUM_QUERY]: {
     fontSize: theme.FONT_MEDIUM
   }
@@ -56,16 +55,4 @@ export const Paragraph = styled('p')({
   fontSize: theme.FONT_SMALL,
   opacity: 0.6,
   margin: `10px 0`
-})
-
-export const PlacesInput = styled('div')({
-  margin: `auto`,
-  width: `100%`,
-  maxWidth: 350,
-  display: 'flex',
-  '& > .google-places-autocomplete': {
-    flex: 1,
-    display: 'flex',
-    flexDirection: 'column'
-  }
 })

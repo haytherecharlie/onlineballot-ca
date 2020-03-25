@@ -22,9 +22,8 @@ const WardFinder = () => {
     onChange(e)
   }
 
-  const selectPlaceInput = place => {
-    dispatch({ type: A.SET_ADDRESS, value: place })
-    setValue(place.description)
+  const selectPlaceInput = ({ description }) => {
+    dispatch({ type: A.STREET_ADDRESS, value: description, screen: 'GeoLookup' })
   }
 
   return (

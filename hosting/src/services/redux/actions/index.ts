@@ -1,13 +1,17 @@
-// Universal Actions
-export const INITIALIZE = 'INITIALIZE'
-
 // App Actions
-export const TOGGLE_KEYBOARD = 'KEYBOARD_UP'
-export const TOGGLE_DARK_MODE = 'DARK_MODE'
-export const TOGGLE_MODAL = 'TOGGLE_MODAL'
-export const CHANGE_SLIDE = 'CHANGE_SLIDE'
-export const TOGGLE_NAV = 'TOGGLE_NAV'
-export const SET_DIMENSIONS = 'SET_DIMENSIONS'
+export const NAVIGATE = 'NAVIGATE'
 
 // Address Actions
-export const SET_ADDRESS = 'SET_ADDRESS'
+export const STREET_ADDRESS = 'STREET_ADDRESS'
+export const FULL_ADDRESS = 'FULL_ADDRESS'
+
+// Ballot Actions
+export const FIRST_NAME = 'FIRST_NAME'
+export const LAST_NAME = 'LAST_NAME'
+export const GENDER = 'GENDER'
+export const AGE = 'AGE'
+export const EMAIL = 'EMAIL'
+export const PHONE = 'PHONE'
+export const VOTE_FOR = 'VOTE_FOR'
+export const REFERENDUM = 'REFERENDUM'
+

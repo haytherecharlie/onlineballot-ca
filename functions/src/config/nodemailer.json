@@ -1,0 +1,9 @@
+{
+  "host": "smtp.zoho.com",
+  "port": 465,
+  "secure": true,
+  "auth": {
+    "user": "welcome@habi.chat",
+    "pass": "5X3FkbUztPkF"
+  }
+}

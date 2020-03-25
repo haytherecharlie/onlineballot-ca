@@ -5,7 +5,7 @@ import * as S from './GeoLookup.style'
 
 const GeoLookup = () => {
   const status = useGeoLookup()
-  
+
   return (
     <S.GeoLookup>
       <Spinner />

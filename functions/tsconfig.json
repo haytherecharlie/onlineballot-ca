@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "outDir": "build",
+    "skipLibCheck": true, // doesn't care about typings files for libraries
+    "esModuleInterop": true, // allows import charlie from 'charlie' instead of * as charlie
+    "allowSyntheticDefaultImports": true, // same as esModuleInterop
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "strict": false,
+    "target": "es2017",
+    "baseUrl": "./",
+    "paths": {
+      "config/*": ["./src/config/*"],
+      "controllers/*": ["./src/controllers/*"],
+      "services/*": ["./src/services/*"],
+      "utils/*": ["./src/utils/*"]
+    }
+  },
+  "compileOnSave": true,
+  "include": ["src"]
+}

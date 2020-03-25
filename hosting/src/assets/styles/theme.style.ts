@@ -1,10 +1,8 @@
-import { isDarkMode } from 'utils/helpers'
-const darkMode = isDarkMode()
-
 export default {
   // Colors
-  BACKGROUND_COLOR: darkMode ? '#222222' : '#F0F3F8',
-  DEFAULT_COLOR: darkMode ? '#FFFFFF' : '#262359',
+  BACKGROUND_COLOR: '#F0F3F8',
+  BALLOT_COLOR: '#FFFFFF',
+  DEFAULT_COLOR: '#262359',
   PRIMARY_COLOR: '#5A3DA3',
   SECONDARY_COLOR: '#99c047',
 
@@ -24,5 +22,26 @@ export default {
   // Font Weight
   FONT_LIGHT: 200,
   FONT_REGULAR: 600,
-  FONT_HEAVY: 800
+  FONT_HEAVY: 800,
+
+  // Input Style
+  INPUT_STYLE: {
+    boxSizing: 'border-box',
+    margin: `10px 0`,
+    width: `100%`,
+    padding: `5px 10px 3px 10px`,
+    border: 'none',
+    borderBottom: `1px solid rgba(0,0,0,0.1)`,
+    borderRadius: 5,
+    color: '#262359',
+    textAlign: 'left',
+    background: `#FFFFFF`,
+    '&::placeholder': {
+      color: '#777777'
+    },
+    '&:focus': {
+      outline: 'none',
+      boxShadow: `0 0 3px blue`
+    }
+  }
 }

@@ -1,20 +1,17 @@
 import * as A from '../actions'
 
 const dState = {
-  coords: {
-    lat: 42.994469,
-    lng: -81.2579276
-  },
-  ward: '6',
-  streetAddress: '803 Talbot Street, London, ON, Canada'
+  screen: 'WardFinder'
 }
 
 const reducer = (state = dState, action) => {
   switch (action.type) {
+    case A.NAVIGATE:
+      return { ...state, screen: action.value }
     case A.STREET_ADDRESS:
-      return { ...state, streetAddress: action.value }
+      return { ...state, screen: action.screen }
     case A.FULL_ADDRESS:
-      return action.value
+      return { ...state, screen: action.screen }
     default:
       return state
   }

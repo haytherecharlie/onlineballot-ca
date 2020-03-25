@@ -1,8 +1,9 @@
 import { createStore, combineReducers } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
-import app from './reducers/app'
+import application from './reducers/application'
 import address from './reducers/address'
+import ballot from './reducers/ballot'
 
-const reducer = combineReducers({ app, address })
+const reducer = combineReducers({ application, address, ballot })
 
 export default preloadedState => createStore(reducer, preloadedState, composeWithDevTools())
